@@ -54,7 +54,8 @@
             android:textColor="@color/textColorEarthquakeLocation"
             android:textSize="16sp"
             android:textStyle="bold"
-            tools:text="San Francisco, CA" />
+            tools:text="Long placeholder location that should wrap to more than 2 lines of text" />
+
     </LinearLayout>
 
 
