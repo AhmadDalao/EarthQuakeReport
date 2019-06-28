@@ -6,7 +6,9 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class QueryUtils {
 
@@ -59,7 +61,8 @@ public class QueryUtils {
 
                 Double mag = properties.getDouble("mag");
                 String location = properties.getString("place");
-                String time = properties.getString("time");
+                Long time = properties.getLong("time");
+
 
                 earthQuakeModel earthquake = new earthQuakeModel(mag, location, time);
                 earthquakesList.add(earthquake);

@@ -4,6 +4,8 @@ public class earthQuakeModel {
     private Double magnitude;
     private String placeName;
     private String date;
+    private long mTimeInMilliseconds;
+
 
     public earthQuakeModel(Double magnitude, String placeName, String date) {
         this.magnitude = magnitude;
@@ -12,7 +14,19 @@ public class earthQuakeModel {
     }
 
 
+    public earthQuakeModel(Double magnitude, String placeName, long mTimeInMilliseconds) {
+        this.magnitude = magnitude;
+        this.placeName = placeName;
+        this.mTimeInMilliseconds = mTimeInMilliseconds;
+    }
 
+    public long getmTimeInMilliseconds() {
+        return mTimeInMilliseconds;
+    }
+
+    public void setmTimeInMilliseconds(long mTimeInMilliseconds) {
+        this.mTimeInMilliseconds = mTimeInMilliseconds;
+    }
 
     public Double getMagnitude() {
         return magnitude;
