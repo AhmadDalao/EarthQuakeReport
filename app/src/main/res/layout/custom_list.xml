@@ -1,40 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
-    android:orientation="horizontal">
+    android:padding="16dp">
 
+
+    <LinearLayout
+        android:id="@+id/placeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
         <TextView
             android:id="@+id/magnitude"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_margin="16dp"
+            android:textSize="16sp"
+            android:textStyle="bold"
             tools:text="7.5" />
 
-        <TextView
-            android:id="@+id/placeName"
-            android:layout_width="0dp"
+        <LinearLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            tools:text="San Francisco, CA" />
+            android:orientation="vertical"
+            android:paddingLeft="16dp"
+            >
 
-        <TextView
 
-            android:id="@+id/date"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            tools:text="Mar 6, 2010" />
+            <TextView
+                android:id="@+id/nearByPlace"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                tools:text="74km NW of" />
+
+            <TextView
+                android:id="@+id/placeName"
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                tools:text="San Francisco, CA" />
+        </LinearLayout>
+
+    </LinearLayout>
 
 
     <TextView
-        android:id="@+id/time"
-        android:layout_width="0dp"
+        android:id="@+id/date"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:textSize="12sp"
+        tools:text="Mar 6, 2010"
+        />
+
+    <TextView
+        android:id="@+id/time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/date"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="4dp"
+        android:textSize="16sp"
         tools:text="3:00 PM" />
 
-    </LinearLayout>
+
+</RelativeLayout>

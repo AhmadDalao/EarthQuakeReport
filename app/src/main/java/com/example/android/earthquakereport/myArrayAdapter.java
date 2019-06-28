@@ -7,12 +7,17 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
 public class myArrayAdapter extends ArrayAdapter<earthQuakeModel> {
+
+    private String primaryLocation;
+    private String locationOffset;
+    private static final String LOCATION_SEPARATOR = " of ";
+
+
     public myArrayAdapter(Context context, ArrayList<earthQuakeModel> earthQuakeModels) {
         super(context, 0, earthQuakeModels);
     }
@@ -33,8 +38,24 @@ public class myArrayAdapter extends ArrayAdapter<earthQuakeModel> {
         magnitude.setText(String.valueOf(currentEarthquake.getMagnitude()));
 
 
-        TextView placeName = (TextView) listItems.findViewById(R.id.placeName);
-        placeName.setText(currentEarthquake.getPlaceName());
+        String originalLocation = currentEarthquake.getPlaceName();
+
+        if (originalLocation.contains(LOCATION_SEPARATOR)) {
+            String[] parts = originalLocation.split(LOCATION_SEPARATOR);
+            locationOffset = parts[0] + LOCATION_SEPARATOR;
+            primaryLocation = parts[1];
+        } else {
+            locationOffset = getContext().getString(R.string.near_the);
+            primaryLocation = originalLocation;
+        }
+
+
+        TextView primaryLocationView = (TextView) listItems.findViewById(R.id.placeName);
+        primaryLocationView.setText(primaryLocation);
+
+        TextView locationOffsetView = (TextView) listItems.findViewById(R.id.nearByPlace);
+        locationOffsetView.setText(locationOffset);
+
 
         // Create a new Date object from the time in milliseconds of the earthquake
         Date dateObject = new Date(currentEarthquake.getmTimeInMilliseconds());
@@ -52,7 +73,6 @@ public class myArrayAdapter extends ArrayAdapter<earthQuakeModel> {
         String formattedTime = formatTime(dateObject);
         // Display the time of the current earthquake in that TextView
         timeView.setText(formattedTime);
-
 
 
         return listItems;
