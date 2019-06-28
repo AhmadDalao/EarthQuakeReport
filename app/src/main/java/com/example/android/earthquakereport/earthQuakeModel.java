@@ -12,6 +12,8 @@ public class earthQuakeModel {
     }
 
 
+
+
     public Double getMagnitude() {
         return magnitude;
     }

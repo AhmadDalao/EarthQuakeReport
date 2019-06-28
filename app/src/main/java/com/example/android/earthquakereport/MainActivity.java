@@ -13,15 +13,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ArrayList<earthQuakeModel> quakeModels = new ArrayList<>();
-        quakeModels.add(new earthQuakeModel(7.5, "San francisco", "Feb 2, 2016"));
-        quakeModels.add(new earthQuakeModel(6.1, "London", "July 20,2015"));
-        quakeModels.add(new earthQuakeModel(7.5, "San francisco", "Feb 2, 2016"));
-        quakeModels.add(new earthQuakeModel(6.1, "London", "July 20,2015"));
-        quakeModels.add(new earthQuakeModel(7.5, "San francisco", "Feb 2, 2016"));
-        quakeModels.add(new earthQuakeModel(6.1, "London", "July 20,2015"));
-        quakeModels.add(new earthQuakeModel(7.5, "San francisco", "Feb 2, 2016"));
-        quakeModels.add(new earthQuakeModel(6.1, "London", "July 20,2015"));
+        ArrayList<earthQuakeModel> quakeModels = QueryUtils.extractEarthquakes();
+//        quakeModels.add(new earthQuakeModel(7.5, "San francisco", "Feb 2, 2016"));
+//        quakeModels.add(new earthQuakeModel(6.1, "London", "July 20,2015"));
+//        quakeModels.add(new earthQuakeModel(7.5, "San francisco", "Feb 2, 2016"));
+//        quakeModels.add(new earthQuakeModel(6.1, "London", "July 20,2015"));
+//        quakeModels.add(new earthQuakeModel(7.5, "San francisco", "Feb 2, 2016"));
+//        quakeModels.add(new earthQuakeModel(6.1, "London", "July 20,2015"));
+//        quakeModels.add(new earthQuakeModel(7.5, "San francisco", "Feb 2, 2016"));
+//        quakeModels.add(new earthQuakeModel(6.1, "London", "July 20,2015"));
 
         myArrayAdapter adapter = new myArrayAdapter(this, quakeModels);
         ListView listView = (ListView) findViewById(R.id.myList);
