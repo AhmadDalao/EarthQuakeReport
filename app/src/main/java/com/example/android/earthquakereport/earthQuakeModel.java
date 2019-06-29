@@ -5,13 +5,24 @@ public class earthQuakeModel {
     private String placeName;
     private String date;
     private long mTimeInMilliseconds;
+    private String mUrl;
 
 
-    public earthQuakeModel(Double magnitude, String placeName, String date) {
+    public String getmUrl() {
+        return mUrl;
+    }
+
+    public void setmUrl(String mUrl) {
+        this.mUrl = mUrl;
+    }
+
+    public earthQuakeModel(Double magnitude, String placeName, long mTimeInMilliseconds, String mUrl) {
         this.magnitude = magnitude;
         this.placeName = placeName;
-        this.date = date;
+        this.mTimeInMilliseconds = mTimeInMilliseconds;
+        this.mUrl = mUrl;
     }
+
 
 
     public earthQuakeModel(Double magnitude, String placeName, long mTimeInMilliseconds) {
