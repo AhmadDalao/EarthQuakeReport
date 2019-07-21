@@ -134,6 +134,9 @@ public class myArrayAdapter extends ArrayAdapter<earthQuakeModel> {
                 magnitudeColorResourceId = R.color.magnitude10plus;
                 break;
         }
+        //You can call ContextCompat getColor() to convert the color resource ID
+        // into an actual integer color value, and return the result as the return value of the
+        // getMagnitudeColor() helper method.
         return ContextCompat.getColor(getContext(), magnitudeColorResourceId);
     }
 
